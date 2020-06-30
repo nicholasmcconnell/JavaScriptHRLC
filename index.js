@@ -342,24 +342,26 @@
 // const d = 3;
 // const a = [1, 2, 3, 4, 5];
 
-// function rotLeft(a, d) {
-//     while (d) {
-//         a.push(a.shift());
-//         d--;
-//     }
-//     return a;
-// }
+// // function rotLeft(a, d) {
+// //     while (d) {
+// //         a.push(a.shift());
+// //         d--;
+// //     }
+// //     return a;
+// // }
 
 // // console.log("left " + rotLeft(a, d))
 
 
 // let acc = 0
 
+// // console.log(a.splice(-1))
+
 // function right(a, d, acc) {
 
-//     while (acc < d) {
+//     while (d) {
 //         a.unshift(a.splice(-1));
-//         acc++;
+//         d--;
 //     }
 //     return a;
 // }
@@ -384,79 +386,79 @@
 
 // let q = [5, 1, 2, 3, 7, 8, 6, 4]
 
-const inimumBribes = (q) => {
+// const inimumBribes = (q) => {
 
-    let totalMoves = 0;
-    let movesArr = [];
-    let moves = 0;
+//     let totalMoves = 0;
+//     let movesArr = [];
+//     let moves = 0;
 
-    q.forEach((cv, i) => {
+//     q.forEach((cv, i) => {
 
-        moves = cv - (i + 1);
-        console.log(moves);
+//         moves = cv - (i + 1);
+//         console.log(moves);
 
-        if (moves > 0) {
-            totalMoves += moves;
-            movesArr.push(moves);
-        }
-    });
+//         if (moves > 0) {
+//             totalMoves += moves;
+//             movesArr.push(moves);
+//         }
+//     });
 
-    let i = 0
-    let result;
-    for (i; i < movesArr.length; i++) {
-        if (movesArr[i] >= 2) {
-            process.stdout.write(totalMoves.toString());
-            process.stdout.write("\n");
-            process.stdout.write("Too Chaotic");
-            return;
-            return ("Too Chaotic ");
-        } 
-        // else if (movesArr[i] < 2 && movesArr[i] === movesArr.length) {
-        //     // process.stdout.write(totalMoves);
-        //     // return;
-        //     return totalMoves;
-        // }
-    }
-    process.stdout.write(totalMoves);
-    return;
-    return totalMoves;
-}
+//     let i = 0
+//     let result;
+//     for (i; i < movesArr.length; i++) {
+//         if (movesArr[i] >= 2) {
+//             process.stdout.write(totalMoves.toString());
+//             process.stdout.write("\n");
+//             process.stdout.write("Too Chaotic");
+//             return;
+//             return ("Too Chaotic ");
+//         } 
+//         // else if (movesArr[i] < 2 && movesArr[i] === movesArr.length) {
+//         //     // process.stdout.write(totalMoves);
+//         //     // return;
+//         //     return totalMoves;
+//         // }
+//     }
+//     process.stdout.write(totalMoves);
+//     return;
+//     return totalMoves;
+// }
 
-// // minimumBribes(q)
-// // console.log(minimumBribes(q));
+// // // minimumBribes(q)
+// // // console.log(minimumBribes(q));
 
-let q = [5, 1, 2, 3, 7, 8, 6, 4]
+// let q = [1, 4, 3, 2, 5]
 
-const minimumBribes = (q) => {
-    let swaps = 0;
-    let min = q.length;
-    for (var i = q.length - 1; i >= 0; i--) {
-        console.log(q[i]);
-        if (q[i] - i > 3) {
-            // process.stdout.write("Too chaotic");
-            process.stdout.write("\n");
-            return "Too chaotic";
+// const minimumBribes = (q) => {
+//     let swaps = 0;
+//     let min = q.length;
+//     for (var i = q.length - 1; i >= 0; i--) {
+//         console.log(q[i]);
+//         if (q[i] - i > 3) {
+//             // process.stdout.write("Too chaotic");
+//             process.stdout.write("\n");
+//             return "Too chaotic";
          
-        }
-        if (q[i] > i + 1) {
-            swaps += (q[i] - (i + 1));
-        } else {
-            if (min > q[i]) {
-                min = q[i];
-            } else if (q[i] != min) {
-                swaps++;
-            }
-        }
-        console.log("min " + min)
-        console.log("swaps " + swaps)
-    }
-    // process.stdout.write(swaps);
-    // process.stdout.write("\n");
-    // return;
-    return swaps;
-}
+//         }
+//         if (q[i] > i + 1) {
+//             swaps += (q[i] - (i + 1));
+//         } else {
+//             if (min > q[i]) {
+//                 min = q[i];
+//             } else if (q[i] != min) {
+//                 swaps++;
+//             }
+//         }
+//         console.log("min " + min)
+//         console.log("swaps " + swaps)
+//     }
+//     // process.stdout.write(swaps);
+//     // process.stdout.write("\n");
+//     // return;
+//     return swaps;
+// }
 
-console.log(minimumBribes(q));
+// console.log(minimumBribes(q));
 
 // function minimumBribes(q) {
 //     var bribes = 0, i, j;
