@@ -543,7 +543,7 @@
     //     } 
     // } 
     // return 'Yes';  
-}
+// }
 
 // console.log(checkMagazine(magazine, note));
 
@@ -567,3 +567,13 @@
 //         }
 //     }
 //     console.log(replicable ? 'Yes' : 'No')
+
+arr = [1,2,2,3]
+Output: [1,2,3]
+
+const removeDuplicate = (arr) => {
+    arrSet = new Set(arr);
+    return arrSet;
+}
+
+console.log(removeDuplicate(arr));
