@@ -594,8 +594,13 @@ const firstDuplicate = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         if (arr.lastIndexOf(arr[i]) !== i) {
             console.log(arr[i]);
+            break;
         }
     }
 }
 
-firstDuplicate(arr);
+// firstDuplicate(arr);
+
+let dupe = arr.find((k,i) => arr.lastIndexOf(k) !== i)
+
+console.log(dupe);
