@@ -577,7 +577,7 @@
 
 // console.log(removeDuplicate(arr));
 
-const arr = [2, 5, 6, 3, 5, 2, 7, 6]
+const arr = [2, 5, 6, 3, 5, 2, 7, 6, 7]
 Output: 5
 
 // const firstDuplicate = (arr) => {
@@ -601,15 +601,19 @@ const firstDuplicate = (arr) => {
 
 // firstDuplicate(arr);
 
-let dupe = arr.find((k,i) => arr.lastIndexOf(k) !== i);
+let dupe = arr.find((k, i) => arr.lastIndexOf(k) !== i);
 
 // console.log(dupe);
 
-const allDupes = arr.map((k, i) => {
-    if(arr.lastIndexOf(k) !== i){
-        return arr[i];
-    }
-});
+const allDupes = () => {
+    let newArr = []
+    arr.map((k, i) => {
+        if (arr.lastIndexOf(k) !== i) {
+            newArr.push(arr[i]);
+        }
+    });
+    return newArr
+}
 
-console.log(allDupes)
+console.log(allDupes(arr))
 
