@@ -568,12 +568,30 @@
 //     }
 //     console.log(replicable ? 'Yes' : 'No')
 
-arr = [1,2,2,3]
-Output: [1,2,3]
+// arr = [1,2,2,3]
+// Output: [1,2,3]
+// const removeDuplicate = (arr) => {
+//     arrSet = new Set(arr);
+//     return arrSet;
+// }
 
-const removeDuplicate = (arr) => {
-    arrSet = new Set(arr);
-    return arrSet;
+// console.log(removeDuplicate(arr));
+
+const arr = [ 2, 5, 6, 3, 5 ]
+Output: 5
+
+const firstDuplicate = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+     
+ 
+        for(let j = i+1; j < arr.length+1; j++){
+            if(arr[i] === arr[j]){
+                console.log(arr[i]);
+            }
+           
+        }
+        
+    }
 }
 
-console.log(removeDuplicate(arr));
+firstDuplicate(arr);

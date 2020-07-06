@@ -21,7 +21,7 @@ It's time for the pre-class drill of the day! Interviewing is a skill that is in
 I STRONGLY encourage everyone to attempt these preclass drills every day and you should start by pseudo-coding. Many companies are judging more on problem solving skills than coding chops, so having strong pseudo-coding skills to fall back on may just land you your dream job one day.
 
 <!-- Write a function that takes in an array of integers and the array with duplicates removed
-
+// Solved
 Ex:
 Input: [1,2,2,3]
 Output: [1,2,3]
