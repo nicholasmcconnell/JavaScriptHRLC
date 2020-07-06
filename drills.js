@@ -534,15 +534,15 @@
 //         }
 //     }
 //     console.log(replicable ? 'Yes' : 'No')
-    
-    // for(let i = 0; i < note.length; i++) { 
-    //     for(let j = 0; j < magazine.length; j++) { 
-    //         if(magazine[i] !== note[j]) { 
-    //             return 'No'; 
-    //         } 
-    //     } 
-    // } 
-    // return 'Yes';  
+
+// for(let i = 0; i < note.length; i++) { 
+//     for(let j = 0; j < magazine.length; j++) { 
+//         if(magazine[i] !== note[j]) { 
+//             return 'No'; 
+//         } 
+//     } 
+// } 
+// return 'Yes';  
 // }
 
 // console.log(checkMagazine(magazine, note));
@@ -577,20 +577,24 @@
 
 // console.log(removeDuplicate(arr));
 
-const arr = [ 2, 5, 6, 3, 5 ]
+const arr = [2, 5, 6, 3, 5]
 Output: 5
+
+// const firstDuplicate = (arr) => {
+//     for (let i = 0; i < arr.length; i++) {
+//         for(let j = i+1; j < arr.length+1; j++){
+//             if(arr [i] === arr[j]){
+//                 console.log(arr[i]);
+//             } 
+//         }
+//     }
+// }
 
 const firstDuplicate = (arr) => {
     for (let i = 0; i < arr.length; i++) {
-     
- 
-        for(let j = i+1; j < arr.length+1; j++){
-            if(arr[i] === arr[j]){
-                console.log(arr[i]);
-            }
-           
+        if (arr.lastIndexOf(arr[i]) !== i) {
+            console.log(arr[i]);
         }
-        
     }
 }
 
