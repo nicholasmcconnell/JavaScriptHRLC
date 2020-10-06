@@ -1,9 +1,15 @@
-const arr = [1, 5, 5, 25, 125]
-const r = 5
+const arr = [1, 2, 2, 4];
+ //4, 8, 16
+ //2, 4, 8
+ //2, 4, 8
+ //1 ,2, 4
+const r = 2;
 
-let singlets = {125: 1, 25: 1, 5: 2, };
-let douplets = {625: 0, 125: 1, 25: 2, 5: 2};
-let nickCount = 4;
+let singlets = {1:1, 2:2, 4:1}
+let douplets = {2:2, 4:2, 8:0};
+let nickCount = 2;
+
+// console.log(singlets)
 
 const countTriplets = (arr, r) => {
     //keeps count of occurences of integer within array
