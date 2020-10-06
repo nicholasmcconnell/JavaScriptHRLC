@@ -1,5 +1,9 @@
-const arr = [1, 3, 9, 9, 27, 81]
-const r = 3
+const arr = [1, 5, 5, 25, 125]
+const r = 5
+
+let singlets = {125: 1, 25: 1, 5: 2, };
+let douplets = {625: 0, 125: 1, 25: 2, 5: 2};
+let nickCount = 4;
 
 const countTriplets = (arr, r) => {
     //keeps count of occurences of integer within array
@@ -51,9 +55,12 @@ const countTriplets = (arr, r) => {
         hGram[t1] ? hGram[t1]++ : hGram[t1] = 1;
 
     }
+    console.log('singlets', hGram)
+    console.log('douplets', hGram2)
+
     return count;
 }
-
+// 
 console.log(countTriplets(arr, r));
 
 
