@@ -52,14 +52,15 @@ const minSwapsOpti = (arr) => {
 
     for (let i = 0; i < arr.length; i++) {
         const right = i + 1;
-        console.log(arr)
+        console.log('before if', arr)
         if (arr[i] !== right) {
             const rightIdx = arr.indexOf(right, i);
-            console.log('rightindesx', rightIdx, arr[i]);
+            console.log('rightindesx', rightIdx, right, i);
             arr[rightIdx] = arr[i];
             arr[i] = right;
             ++minSwaps;
         }
+        console.log('after if', arr)
     }
 
     return minSwaps;
