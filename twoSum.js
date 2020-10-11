@@ -45,9 +45,9 @@ const twoSums = (nums, target) => {
 
 0
 
-const nums = [0,4,3,0];
-// -3, 4, 3, 90
-const target = 0;
+// const nums = [0,4,3,0];
+// // -3, 4, 3, 90
+// const target = 0;
 
 //solution to account for negative numbers in array and target of zero
 const twoSumsNeg = (nums, target) => {
@@ -56,8 +56,6 @@ const twoSumsNeg = (nums, target) => {
 
     for (const [i, e] of nums.entries()) {
         let remainder = target - e;
-        console.log(remainder);
-
 
         if ((remainder || remainder === 0) && remainderMap[remainder] !== undefined) {
             solution.push(remainderMap[remainder], i)
@@ -68,4 +66,24 @@ const twoSumsNeg = (nums, target) => {
     }
 }
 
-console.log('result', twoSumsNeg(nums, target))
+// console.log('result', twoSumsNeg(nums, target))
+
+const nums = [3,2,11,-2,15,6, 7,9];
+// -3, 4, 3, 90
+const target = 9;
+
+//fastest solution
+var twoSum = function(nums, target) {
+    const result = {};
+    for(let i=0; i<nums.length; i++) {
+        console.log(nums[i], result);
+       if(result[nums[i]] >=0 ) {
+           return [result[nums[i]], i];
+       }
+        result[target-nums[i]] = i;
+        console.log(result)
+    }
+    return [];
+};
+
+console.log(twoSum(nums, target))
