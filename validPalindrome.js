@@ -1,12 +1,20 @@
 // Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 // Note: For the purpose of this problem, we define empty string as valid palindrome.
 
-const string =  "A man, a plan, a canal: Panama";
+const string =  "ab_a";
 
 const isPalindrome = (string) => {
-    console.log(string.replace(/\W/g,'').toLowerCase());
-    console.log(string.replace(/\W/g,'').toLowerCase().split('').reverse().join(''));
+    let altStr = string.replace(/[^0-9a-z]/gi, '').toLowerCase();
+    let altStrReverse = string.replace(/[^0-9a-z]/gi, '').toLowerCase().split('').reverse().join('');
+
+    let verify = altStr.localeCompare(altStrReverse);
+
+    if (verify === 0) {
+        return true;
+    } else {
+        return false;
+    }
 
 }
 
-isPalindrome(string);
+console.log(isPalindrome(string));
