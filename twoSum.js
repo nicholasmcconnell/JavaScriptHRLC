@@ -68,7 +68,7 @@ const twoSumsNeg = (nums, target) => {
 
 // console.log('result', twoSumsNeg(nums, target))
 
-const nums = [3,2,11,-2,15,6, 7,9];
+const nums = [3,2,11,5,6,7,9];
 // -3, 4, 3, 90
 const target = 9;
 
@@ -77,7 +77,7 @@ var twoSum = function(nums, target) {
     const result = {};
     for(let i=0; i<nums.length; i++) {
         console.log(nums[i], result);
-       if(result[nums[i]] >=0 ) {
+       if(result[nums[i]]>=0) {
            return [result[nums[i]], i];
        }
         result[target-nums[i]] = i;
