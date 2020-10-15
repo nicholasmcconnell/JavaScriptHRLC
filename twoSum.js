@@ -46,7 +46,7 @@ const twoSums = (nums, target) => {
 0
 
 // const nums = [0,4,3,0];
-// // -3, 4, 3, 90
+// -3, 4, 3, 90
 // const target = 0;
 
 //solution to account for negative numbers in array and target of zero
@@ -69,7 +69,7 @@ const twoSumsNeg = (nums, target) => {
 // console.log('result', twoSumsNeg(nums, target))
 
 const nums = [3,2,11,5,6,7,9];
-// -3, 4, 3, 90
+// // -3, 4, 3, 90
 const target = 9;
 
 //fastest solution
