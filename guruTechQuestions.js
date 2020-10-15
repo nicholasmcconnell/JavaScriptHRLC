@@ -58,26 +58,33 @@ Example 2: Starting date -> “2020-07-17 13:21:34”, duration -> “10 minutes
 // Provide your solution below. Written text, pseudo code, or JavaScript is acceptable
 
 const startDateTime = '2020-07-17 13:21:34';
-const duration = '10 days';
+const durationStr = '10 days';
 
-const timePassed = (startDateTime, duration) => {
-    // const duration = parseDuratin(duration);
-
+const timePassed = (startDateTime, durationStr) => {
+    const  durationArr = parseDuratin(durationStr);
     const date = dateConverter(startDateTime);
-    date.setDate(date.getDate() + 10);
-    console.log(date);
+    console.log(durationArr, date)
 
+    // date.setDate(date.getDate() + 10);
+//year - , month, day, hours, minute, seconts
+//if hashmap[arr[1]] = 'days'
 
+let durationHash = {
+    'days' : date.setDate(date.getDate() + durationArr[0])
+}
 
-    // const date = startDateTime.split(/ |-|:/);
-    // const time = startDateTime.split(' ')[1];
-    // let dateInt = parseInt(startDateTime);
+if(durationHash[durationArr[1]]) {
+    durationHash[durationArr[1]]
+    console.log('78', date)
+}
+
+// return (`$`)
 
 
 }
 
-const parseDuratin = (duration) => {
-    console.log(duration);
+const parseDuratin = () => {
+    return durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e) 
 }
 
 const dateConverter = () => {
@@ -86,5 +93,5 @@ const dateConverter = () => {
     return(d);
 }
 
-console.log(timePassed(startDateTime, duration));
+console.log(timePassed(startDateTime, durationStr));
 
