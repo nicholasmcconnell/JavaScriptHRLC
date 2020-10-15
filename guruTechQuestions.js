@@ -32,7 +32,7 @@ Given a list of numbers, describe how you would find the sum of the squares of t
 Example 1: numbers - [ 4, 3, 12, 6 ], result - 205
 Example 2: numbers - [ 0, 8, 1 ], result - 65
 */
-const numbers = [ 4, 3, 12, 6 ]
+const numbers = [4, 3, 12, 6]
 
 const squareSums = (numbers) => {
     //loop through and square each value and add it to itterator
@@ -43,7 +43,7 @@ const squareSums = (numbers) => {
     return sum;
 }
 
-console.log(squareSums(numbers));
+// console.log(squareSums(numbers));
 
 
 /*
@@ -56,3 +56,34 @@ Example 2: Starting date -> “2020-07-17 13:21:34”, duration -> “10 minutes
 */
 
 // Provide your solution below. Written text, pseudo code, or JavaScript is acceptable
+
+const startDateTime = '2020-07-17 13:21:34';
+const duration = '10 days';
+
+const timePassed = (startDateTime, duration) => {
+    //parse out date and time\
+    //use Date to move time ahead by days via date addtion function
+
+    const dateArr = dateConverter(startDateTime);
+    console.log(dateArr);
+
+    // const date = startDateTime.split(/ |-|:/);
+    // const time = startDateTime.split(' ')[1];
+    // let dateInt = parseInt(startDateTime);
+
+
+}
+
+const dateConverter = (startDateTime) => {
+    const date = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
+    console.log('date', date)
+    let d = new Date(date[0], date[1]-1, date[2],date[3], date[4], date[5]);
+    return(d);
+    
+
+}
+
+
+
+console.log(timePassed(startDateTime, duration));
+
