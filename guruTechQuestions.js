@@ -6,7 +6,7 @@ Given a string and a word, describe a function that will return the number of
 /Example 2: string - “The tiny fox bit the big fox”, word - “fox” → output: 2
 */
 
-const string = '';
+const string = 'The tiny fox bit the big fox';
 const word = 'fox';
 
 const wordInString = (string, word) => {
@@ -14,9 +14,8 @@ const wordInString = (string, word) => {
     //loop through - if element = worrd iterate counter
     let counter = 0;
     let stringArr = string.split(' ');
-    console.log(stringArr);
 
-    for (const strings of stringArr) {
+    for (const [index, strings] of stringArr.entries()) {
         if (strings === word) {
             counter++;
         }
@@ -24,7 +23,7 @@ const wordInString = (string, word) => {
     return counter;
 }
 
-console.log(wordInString(string, word));
+// console.log(wordInString(string, word));
 
 /*
 QUESTION 2:
@@ -33,6 +32,19 @@ Given a list of numbers, describe how you would find the sum of the squares of t
 Example 1: numbers - [ 4, 3, 12, 6 ], result - 205
 Example 2: numbers - [ 0, 8, 1 ], result - 65
 */
+const numbers = [ 4, 3, 12, 6 ]
+
+const squareSums = (numbers) => {
+    //loop through and square each value and add it to itterator
+    let sum = 0;
+    for (const e of numbers) {
+        sum += Math.pow(e, 2);
+    }
+    return sum;
+}
+
+console.log(squareSums(numbers));
+
 
 /*
 BONUS QUESTION:
