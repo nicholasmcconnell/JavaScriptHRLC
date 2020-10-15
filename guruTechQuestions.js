@@ -6,20 +6,22 @@ Given a string and a word, describe a function that will return the number of
 /Example 2: string - “The tiny fox bit the big fox”, word - “fox” → output: 2
 */
 
-const string = 'The tiny fox bit the big fox';
+const string = '';
 const word = 'fox';
 
 const wordInString = (string, word) => {
     //split string into array
     //loop through - if element = worrd iterate counter
     let counter = 0;
-    let wordArr = string.split(' ');
-    console.log(wordArr);
+    let stringArr = string.split(' ');
+    console.log(stringArr);
 
-    // for (const words of word) {
-
-        
-    // }
+    for (const strings of stringArr) {
+        if (strings === word) {
+            counter++;
+        }
+    }
+    return counter;
 }
 
 console.log(wordInString(string, word));
