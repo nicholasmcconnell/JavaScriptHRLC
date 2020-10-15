@@ -61,11 +61,13 @@ const startDateTime = '2020-07-17 13:21:34';
 const duration = '10 days';
 
 const timePassed = (startDateTime, duration) => {
-    //parse out date and time\
-    //use Date to move time ahead by days via date addtion function
+    // const duration = parseDuratin(duration);
 
-    const dateArr = dateConverter(startDateTime);
-    console.log(dateArr);
+    const date = dateConverter(startDateTime);
+    date.setDate(date.getDate() + 10);
+    console.log(date);
+
+
 
     // const date = startDateTime.split(/ |-|:/);
     // const time = startDateTime.split(' ')[1];
@@ -74,16 +76,15 @@ const timePassed = (startDateTime, duration) => {
 
 }
 
-const dateConverter = (startDateTime) => {
-    const date = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
-    console.log('date', date)
-    let d = new Date(date[0], date[1]-1, date[2],date[3], date[4], date[5]);
-    return(d);
-    
-
+const parseDuratin = (duration) => {
+    console.log(duration);
 }
 
-
+const dateConverter = () => {
+    const date = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
+    let d = new Date(date[0], date[1]-1, date[2],date[3]-4, date[4], date[5]);
+    return(d);
+}
 
 console.log(timePassed(startDateTime, duration));
 
