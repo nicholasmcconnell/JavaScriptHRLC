@@ -58,24 +58,32 @@ Example 2: Starting date -> “2020-07-17 13:21:34”, duration -> “10 minutes
 // Provide your solution below. Written text, pseudo code, or JavaScript is acceptable
 
 const startDateTime = '2020-07-17 13:21:34';
-const durationStr = '10 days';
+const durationStr = '10 seconds';
 
-const timePassed = (startDateTime, durationStr) => {
-    const  durationArr = parseDuratin(durationStr);
-    const date = dateConverter(startDateTime);
-    console.log(durationArr, date)
+const timePassed = async (startDateTime, durationStr) => {
+    const date = await dateConverter(startDateTime);
+    const  durationArr = parseDuration(durationStr);
+    console.log(2, date)
 
     // date.setDate(date.getDate() + 10);
 //year - , month, day, hours, minute, seconts
 //if hashmap[arr[1]] = 'days'
 
 let durationHash = {
-    'days' : date.setDate(date.getDate() + durationArr[0])
+    'years' : date.setFullYear(date.getFullYear() + durationArr[0]),
+    'months' : date.setMonth(date.getMonth() + durationArr[0]),
+    'days' : date.setDate(date.getDate() + durationArr[0]),
+    'hours' : date.setHours(date.getHours() + durationArr[0]),
+    'minutes' : date.setMinutes(date.getMinutes() + durationArr[0]),
+    'seconds' : date.setSeconds(date.getSeconds() + durationArr[0])
 }
 
 if(durationHash[durationArr[1]]) {
+    console.log(durationArr['seconds'])
+
     durationHash[durationArr[1]]
-    console.log('78', date)
+    console.log('84', date)
+    // return (`${date}${}${}${}${}${}${}`)
 }
 
 // return (`$`)
@@ -83,13 +91,15 @@ if(durationHash[durationArr[1]]) {
 
 }
 
-const parseDuratin = () => {
-    return durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e) 
+const parseDuration = () => {
+    return durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e.toLocaleLowerCase()) 
 }
 
 const dateConverter = () => {
     const date = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
     let d = new Date(date[0], date[1]-1, date[2],date[3]-4, date[4], date[5]);
+    // console.log(1, date, d)
+    // console.log('sdfds', d.getHours())
     return(d);
 }
 
