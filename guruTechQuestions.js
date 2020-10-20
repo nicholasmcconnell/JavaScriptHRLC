@@ -58,49 +58,54 @@ Example 2: Starting date -> “2020-07-17 13:21:34”, duration -> “10 minutes
 // Provide your solution below. Written text, pseudo code, or JavaScript is acceptable
 
 const startDateTime = '2020-07-17 13:21:34';
-const durationStr = '10 seconds';
+const durationStr = '10 days';
 
-const timePassed = async (startDateTime, durationStr) => {
-    const date = await dateConverter(startDateTime);
+const timePassed = (startDateTime, durationStr) => {
+    const date = dateConverter(startDateTime);
+    console.log(1, date)
     const  durationArr = parseDuration(durationStr);
-    console.log(2, date)
+    console.log(2, durationArr);
+    
+    switch (durationArr[1]) {
+        case 'years':
+            date.setFullYear(date.getFullYear() + durationArr[0]);
+            break;
+        case 'months':
+            date.setMonth(date.getMonth() + durationArr[0]);
+            break;
+        case 'days':
+            date.setDate(date.getDate() + durationArr[0]);
+            break;
+        case 'hours':
+            date.setHours(date.getHours() + durationArr[0]);
+            break;
+        case 'minutes':
+            date.setMinutes(date.getMinutes() + durationArr[0]);
+            break;
+        case 'seconds' : date.setSeconds(date.getSeconds() + durationArr[0])
+            break;
+        default:
+            break;
+    }
 
-    // date.setDate(date.getDate() + 10);
-//year - , month, day, hours, minute, seconts
-//if hashmap[arr[1]] = 'days'
+    console.log('date', date.getHours()-4)
 
-let durationHash = {
-    'years' : date.setFullYear(date.getFullYear() + durationArr[0]),
-    'months' : date.setMonth(date.getMonth() + durationArr[0]),
-    'days' : date.setDate(date.getDate() + durationArr[0]),
-    'hours' : date.setHours(date.getHours() + durationArr[0]),
-    'minutes' : date.setMinutes(date.getMinutes() + durationArr[0]),
-    'seconds' : date.setSeconds(date.getSeconds() + durationArr[0])
-}
-
-if(durationHash[durationArr[1]]) {
-    console.log(durationArr['seconds'])
-
-    durationHash[durationArr[1]]
-    console.log('84', date)
-    // return (`${date}${}${}${}${}${}${}`)
-}
-
-// return (`$`)
-
-
+    return (`${date.getFullYear().toString()}-${date.getMonth().toString()}-${date.getDate().toString()} ${date.getHours().toString()}:${date.getMinutes().toString()}:${date.getSeconds().toString()}`);
 }
 
 const parseDuration = () => {
-    return durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e.toLocaleLowerCase()) 
+    return durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e.toLocaleLowerCase())
+    // return (new Promise((res, rej) => {
+    //     res(durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e.toLocaleLowerCase()))
+    // }))
 }
 
 const dateConverter = () => {
     const date = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
-    let d = new Date(date[0], date[1]-1, date[2],date[3]-4, date[4], date[5]);
-    // console.log(1, date, d)
-    // console.log('sdfds', d.getHours())
-    return(d);
+    console.log('105',date)
+    let d = new Date(date[0], date[1], date[2], date[3], date[4], date[5]);
+    console.log('d', d);
+   return d;
 }
 
 console.log(timePassed(startDateTime, durationStr));
