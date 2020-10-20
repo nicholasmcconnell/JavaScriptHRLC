@@ -65,7 +65,7 @@ const timePassed = (startDateTime, durationStr) => {
     const dateArr = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
     let date = new Date(dateArr[0], dateArr[1], dateArr[2], dateArr[3], dateArr[4], dateArr[5]);
  
-   //sets durationStr arg to array
+   //splits durationStr arg to array
     const durationArr = durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e.toLocaleLowerCase());
 
     switch (durationArr[1]) {
