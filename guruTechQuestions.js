@@ -61,11 +61,13 @@ const startDateTime = '2020-07-17 13:21:34';
 const durationStr = '10 days';
 
 const timePassed = (startDateTime, durationStr) => {
-    const date = dateConverter(startDateTime);
-    console.log(1, date)
-    const  durationArr = parseDuration(durationStr);
-    console.log(2, durationArr);
-    
+    //Sets new Date to startDateTime arg
+    const dateArr = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
+    let date = new Date(dateArr[0], dateArr[1], dateArr[2], dateArr[3], dateArr[4], dateArr[5]);
+ 
+   //sets durationStr arg to array
+    const durationArr = durationStr.split(' ').map((e) => parseInt(e) ? parseInt(e) : e.toLocaleLowerCase());
+
     switch (durationArr[1]) {
         case 'years':
             date.setFullYear(date.getFullYear() + durationArr[0]);
@@ -82,15 +84,16 @@ const timePassed = (startDateTime, durationStr) => {
         case 'minutes':
             date.setMinutes(date.getMinutes() + durationArr[0]);
             break;
-        case 'seconds' : date.setSeconds(date.getSeconds() + durationArr[0])
+        case 'seconds':
+            date.setSeconds(date.getSeconds() + durationArr[0])
             break;
         default:
             break;
     }
 
-    console.log('date', date.getHours()-4)
+    let newDate = `${date.getFullYear().toString()}-${date.getMonth().toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')} ${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}:${date.getSeconds().toString().padStart(2, '0')}`
 
-    return (`${date.getFullYear().toString()}-${date.getMonth().toString()}-${date.getDate().toString()} ${date.getHours().toString()}:${date.getMinutes().toString()}:${date.getSeconds().toString()}`);
+    return (newDate);
 }
 
 const parseDuration = () => {
@@ -102,10 +105,10 @@ const parseDuration = () => {
 
 const dateConverter = () => {
     const date = startDateTime.split(/ |-|:/).map((e) => parseInt(e));
-    console.log('105',date)
+    console.log('105', date)
     let d = new Date(date[0], date[1], date[2], date[3], date[4], date[5]);
     console.log('d', d);
-   return d;
+    return d;
 }
 
 console.log(timePassed(startDateTime, durationStr));
