@@ -6,18 +6,25 @@ const activityNotifications = (expenditures, d) => {
     //on d+1 day find median of previus d days transactions and if d+1 day is x2 median notifications ++
     //iterate over expenditures in sections of d
     //find median of section - if next index is > x2 median => notifications++.
-        //edge case -  end of array = if end of median section =1 is > expenditures.length => return notifications.
+    //edge case -  end of array = if end of median section =1 is > expenditures.length => return notifications.
     let days = 9;
     let notifications = 0;
 
-    for(const [i, cv] of expenditures.entries()){
-        console.log(i, cv);
+    for (let i = 0; i < expenditures.length; i++) {
+        //get sections of d
+        //find median of d
+        let medianArr = []
+
+        for(let j=i; j<(i+5); j++){
+            if(j <= (expenditures.length-2)){
+                medianArr.push(expenditures[j])
+            } else {
+                return notifications;
+            }
+        }
+        console.log(medianArr);
+        
     }
-
-
-
-
-
 }
 
 console.log(activityNotifications(expenditures, d))
