@@ -57,4 +57,57 @@ const countingSort = (arr) => {
     }
 }
 
-countingSort(arr);
+// countingSort(arr);
+const inputArr = [5,7,3,2,5,7,9,44,2,5,6,4,22,4,3,2,34,4,32,5,6];
+const countingSortTutorial = (inputArr) => {
+    for (const cv of inputArr) {
+
+        if (!Number.isInteger(cv)) {
+            console.log('Found a non-integer value inside the input array');
+            return;
+        } else if (cv < 0) {
+            console.log('Found a negative number inside the input array');
+            return;
+        }
+    }
+
+    // if (inputArr.length < 2) return inputArr;
+
+    // let maxValue = Math.max(...inputArr);
+
+    // let countingArr = new Array(maxValue + 1).fill(0);
+
+    // for (let value of inputArr) {
+    //     countingArr[value]++;
+    // }
+    // let resultArr = [];
+    // for (let [i] of countingArr.entries()) {
+    //     while (countingArr[i] > 0) {
+    //         resultArr.push(i)
+    //         countingArr[i]--;
+    //     }
+    // }
+    // return resultArr;
+
+    //find max value
+    let maxValue = Math.max(...inputArr);
+    console.log(maxValue);
+    //inialize counting array with length of max value
+    let countingArr = new Array(maxValue).fill(0)
+    for(let value of inputArr){
+        countingArr[value]++;
+    }
+    console.log(countingArr)
+    //loop over counting arra and push to result array
+    let sortedArr = [];
+    for(let [i] of countingArr.entries()){
+        while(countingArr[i] > 0){
+            sortedArr.push(i);
+            countingArr[i]--;
+        }
+    }
+    return sortedArr;
+}
+
+console.log(countingSortTutorial(inputArr))
+
