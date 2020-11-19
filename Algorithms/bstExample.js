@@ -37,8 +37,8 @@ class BST {
                     return null;
                 }
             }
+            return searchTree(node);
         }
-        return searchTree(node);
     }
     findMin() {
         let current = this.root;
@@ -84,7 +84,7 @@ class BST {
     }
     remove(data) {
         const removeNode = function (node, data) {
-            if (node == null) {
+            if (node == null) { //checks for empty tree
                 return null;
             }
             if (data == node.data) {
@@ -102,7 +102,7 @@ class BST {
                 }
                 //node has two children
                 let tempNode = node.right;
-                while (tempNode.left !== node) {
+                while (tempNode.left !== null) {
                     tempNode = tempNode.left;
                 }
                 node.data = tempNode.data;
@@ -119,3 +119,19 @@ class BST {
         this.root = removeNode(this.root, data);
     }
 }
+
+const bst = new BST();
+
+bst.add(4);
+bst.add(2);
+bst.add(6);
+bst.add(1);
+bst.add(3);
+bst.add(5);
+bst.add(7);
+bst.remove(4);
+console.log(bst.findMax());
+console.log(bst.findMin());
+bst.remove(7);
+console.log(bst.findMax());
+console.log(bst.isPresent(4));
