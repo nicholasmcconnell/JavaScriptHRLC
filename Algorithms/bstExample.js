@@ -68,19 +68,54 @@ class BST {
         }
         return current;
     }
-    isPresent(data){
+    isPresent(data) {
         let current = this.root;
-        while(current){
-            if(data === current.data){
+        while (current) {
+            if (data === current.data) {
                 return true;
             }
-            if(data < current.data){
+            if (data < current.data) {
                 current = current.left;
-            }else{
+            } else {
                 current = current.right;
             }
         }
         return true;
     }
-
+    remove(data) {
+        const removeNode = function (node, data) {
+            if (node == null) {
+                return null;
+            }
+            if (data == node.data) {
+                //nodehas no children
+                if (node.left == null && node.right == null) {
+                    return null;
+                }
+                //node has no left children
+                if (node.left == null) {
+                    return node.right;
+                }
+                //node has no right child
+                if (node.right == null) {
+                    return node.left
+                }
+                //node has two children
+                let tempNode = node.right;
+                while (tempNode.left !== node) {
+                    tempNode = tempNode.left;
+                }
+                node.data = tempNode.data;
+                node.right = removeNode(node.right, tempNode.data);
+                return node;
+            } else if (data < node.data) {
+                node.left = removeNode(node.left, data);
+                return node;
+            } else {
+                node.right = removeNode(node.right, data);
+                return node;
+            }
+        }
+        this.root = removeNode(this.root, data);
+    }
 }
