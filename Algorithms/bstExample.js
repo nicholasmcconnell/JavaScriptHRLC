@@ -80,7 +80,7 @@ class BST {
                 current = current.right;
             }
         }
-        return true;
+        return false;
     }
     remove(data) {
         const removeNode = function (node, data) {
@@ -132,6 +132,6 @@ bst.add(7);
 bst.remove(4);
 console.log(bst.findMax());
 console.log(bst.findMin());
-bst.remove(7);
+bst.remove(2);
 console.log(bst.findMax());
-console.log(bst.isPresent(4));
+console.log(bst.isPresent(2));
