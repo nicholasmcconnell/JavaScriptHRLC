@@ -24,13 +24,8 @@ function fizzBuzz(n) {
         }
         if (!Number.isInteger(int / 3) && !Number.isInteger(int / 5)) {
             console.log(int);
-
         }
-
-
     }
-
-
 }
 
 console.log(fizzBuzz(n));
