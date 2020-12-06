@@ -10,10 +10,11 @@
 //getValue - takes one matrix coordinate returns matrix value
 //rectangle[x, y] - done.
 
-["SubrectangleQueries", "getValue", "updateSubrectangle", "getValue", "getValue", "updateSubrectangle", "getValue", "getValue"]
-let rectangle = [[1, 2, 1], [4, 3, 4], [3, 2, 1], [1, 1, 1]];
-const coordinates = (0, 2);
-// const update = [0,0,3,2,5],[0,2],[3,1],[3,0,3,2,10],[3,1],[0,2]]
+// ["SubrectangleQueries", "getValue", "updateSubrectangle", "getValue", "getValue", "updateSubrectangle", "getValue", "getValue"]
+// ["SubrectangleQueries","updateSubrectangle","getValue","getValue","getValue","updateSubrectangle","getValue","updateSubrectangle","getValue","updateSubrectangle"]
+// [[[[6,9,6,1,2],[8,8,6,5,9],[7,6,10,8,2],[7,7,4,9,1]]],[1,4,2,4,5],[3,4],[2,4],[3,4],[3,4,3,4,8],[2,0],[1,3,3,4,3],[0,2],[3,1,3,4,5]]
+
+let rectangle = [[6,9,6,1,2],[8,8,6,5,9],[7,6,10,8,2],[7,7,4,9,1]];
 
 class SubrectangleQueries {
     constructor(rectangle) {
@@ -22,24 +23,24 @@ class SubrectangleQueries {
 
     updateSubrectangle(row1, col1, row2, col2, newValue) {
         for (let i = row1; i <= row2; i++) {
-            let j;
-            for (i===row1 ? j = col1 : j = 0; j <= col2; j++) {
+            
+            for (let j = col1; j <= col2; j++) {
                 this.rectangle[i][j] = newValue;
             }
         }
     }
 
     getValue(row, col) {
-        return this.rectangle([row][col])
+        return this.rectangle[row][col];
 
     }
 }
 
 let test = new SubrectangleQueries(rectangle);
 
-console.log(test.updateSubrectangle(2,0,3,1,'hi'));
+console.log(rectangle, test.updateSubrectangle(0,4,2,4,5), rectangle)
+// console.log(test.getValue(2,0));
 
-    console.log(rectangle)
 
 // var SubrectangleQueries = function (rectangle) {
 
