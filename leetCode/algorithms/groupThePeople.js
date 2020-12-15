@@ -1,27 +1,29 @@
+const lengthChecker = (groups, v, answerArr) => {
+    if (groups[v].length === v) {
+        answerArr.push(groups[v])
+        groups[v] = [];
+    }
+
+}
+
 const groupThePeople = (arr) => {
     //if !groups[i] - add it
     //if groups[i] && groups[i].length < v -> then add --> 
     //else if groups[i] && groups[i].length = v then groups[0+i] start new group
     let groups = {};
     let answerArr = [];
-  
     for (const [i, v] of arr.entries()) {
         if (!groups[v]) {
             groups[v] = [i]
-            if (groups[v].length === v) {
-                answerArr.push(groups[v])
-                groups[v] = [];
-            }
+            lengthChecker(groups, v, answerArr);
+            
         } else if (groups[v]) {
             groups[v].push(i)
-            if (groups[v].length === v) {
-                answerArr.push(groups[v])
-                groups[v] = [];
-            }
+            lengthChecker(groups, v, answerArr);
+
         }
     };
   
-      console.log(groups, answerArr)
     return answerArr;
 }
 
