@@ -5,11 +5,12 @@ const groupThePeople = (arr) => {
     let groups = {};
 
     for (const [i, v] of arr.entries()) {
-        if(!groups[v]){
-            groups[v] = [i];
-        } else if (groups[v]){
-            groups[v].push(i)
-        }
+        // if(!groups[v]){
+        //     groups[v] = [i];
+        // } else if (groups[v]){
+        //     groups[v].push(i)
+        // }
+        !groups[v] ? groups[v] = [i] : groups[v].push(i);
     }
     console.log(groups)
 
