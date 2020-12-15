@@ -3,30 +3,31 @@ const groupThePeople = (arr) => {
     //if groups[i] && groups[i].length < v -> then add --> 
     //else if groups[i] && groups[i].length = v then groups[0+i] start new group
     let groups = {};
-
+    let answerArr = [];
+  
     for (const [i, v] of arr.entries()) {
-        // if(!groups[v]){
-        //     groups[v] = [i];
-        // } else if (groups[v]){
-        //     groups[v].push(i)
-        // }
-        !groups[v] ? groups[v] = [i] : groups[v].push(i);
-    }
-    console.log(groups)
-
-    // groups[3] = [2,2]
-    // groups[3].push(4)
-
-    // console.log(groups[3].length)
-    // let arr2 = arr.splice(0, Math.ceil(arr.length / 2));
-    // console.log(arr, arr2)
-
-    //     var array1 = [0, 1, 2, 3, 4, 5, 6];
-    // var array2 = array1.splice(0, Math.ceil(array1.length / 2));
-
+        if (!groups[v]) {
+            groups[v] = [i]
+            if (groups[v].length === v) {
+                answerArr.push(groups[v])
+                groups[v] = [];
+            }
+        } else if (groups[v]) {
+            groups[v].push(i)
+            if (groups[v].length === v) {
+                answerArr.push(groups[v])
+                groups[v] = [];
+            }
+        }
+    };
+  
+      console.log(groups, answerArr)
+    return answerArr;
 }
 
-const arr = [3, 3, 3, 3, 3, 1, 3];
+
+
+const arr = [3,3,3,3,3,1,3];
 
 console.log(groupThePeople(arr));
 
