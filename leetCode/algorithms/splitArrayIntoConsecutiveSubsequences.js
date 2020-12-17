@@ -11,26 +11,37 @@ const isPossible = (nums) => {
     let backwardArr = [];
 
     for (let i = 0; i < nums.length; i++) {
-        let lastIndex = nums.length-1;
-        console.log(lastIndex-i-1)
+        let lastIndex = nums.length - 1;
         if (i === 0) {
             forwardArr.push(nums[i]);
             backwardArr.push(nums[lastIndex])
         }
-        if(nums[i+1] - 1 === nums[i]){
-            forwardArr.push(nums[i+1])
-        }
-        if(nums[lastIndex-i] === nums[lastIndex-i-1] +1){
-            backwardArr.push(nums[lastIndex-i-1]);
+        //Forward Arry
+        if (nums[i + 1] - 1 === nums[i]) {
+            forwardArr.push(nums[i + 1])
         }
 
-        // if (nums[i] === nums[i + 1]) {
+        if (nums[i] === nums[i + 1] && forwardArr.length >= 3) {
+            forwardArr = [];
+            forwardArr.push(nums[i + 1]);
+        } else if (nums[i] === nums[i + 1] && forwardArr.length < 3) {
+            return false;
+        }
 
-        // }
+        //Backward Arr
+        if (nums[lastIndex - i] === nums[lastIndex - i - 1] + 1) {
+            backwardArr.push(nums[lastIndex - i - 1]);
+        }
+
+        if (nums[lastIndex - i] === nums[lastIndex - i - 1] && backwardArr.length >= 3) {
+            backwardArr = [];
+            backwardArr.push(nums[lastIndex - i - 1])
+        } else if (nums[lastIndex - i] === nums[lastIndex - i - 1] && backwardArr.length < 3) {
+            return false;
+        }
     }
-    console.log(forwardArr, backwardArr)
-
+    return true;
 }
 
-const nums = [1, 2, 3, 3, 4, 5];
+const nums = [1,2,3,3,4,4,5,5];
 console.log(isPossible(nums))

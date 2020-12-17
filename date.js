@@ -1,28 +1,22 @@
 
 
 const formatDate = () => {
-    //Make a new date
-    //make 7 dates each a day further than the next
-    //needs to check for the day every second
+
+        let d = new Date();
     
-    let d = new Date();
-    let start = setInterval(function(){console.log(d.getDay())}, 2000)
 
-    console.log(start)
-    
-    for(let i = 0; i<=6; i++){
-       console.log(d.setDate(d.getDate()+1));
-       console.log(d.getDate())
+        let datesArr = [];
 
-        console.log(d.toString().split(' ')[0])
+        // console.log(day.getDate())
+        for (let i = 0; i <= 6; i++) {
+            let date = i - d.getDay();
+            let day = new Date(d.setDate(d.getDate() + date))
+            // console.log(date, d.getDate())
+            datesArr.push(`${d.getMonth() + 1}-${day.getDate()}-${d.getFullYear()}`)
+        }
 
-    }
-
-
-
-
-//    return (`${date.getMonth()+1}-${date.setDate(date.getDate())}-${date.getFullYear()}`)
-
+        // return datesArr;
+   console.log(`${d.getMonth() + 1}-${d.getDate()}-${d.getFullYear()}`)
 
 }
 
