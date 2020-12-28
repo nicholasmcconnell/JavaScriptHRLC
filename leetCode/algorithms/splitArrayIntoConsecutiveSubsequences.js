@@ -3,38 +3,53 @@
 //a. each on consists of consecutive integer
 //b. has length at least 3
 const isPossible = (nums) => {
-    //loope through forward and backward simultaneously
-    //if next value consecutive add to array shift or push to array
-    //check for array length -> if arr.length < 3 return false
-    //if it is -> clear array and start again
-
-    // use a class with a method that checks lenghts of hash arrays as things are built
-            //when adding to hash - loop over hash and find last value that is one less than current value in array
-            //if it doesnt exist, then start a new key value pair in object
-
-        //two class method
-            //first loops over array and calls hashmap checker for each
-        // hashchecker method
-            //making it more optimized
-            //if value
+    //two class method
+    //first loops over array and calls hashmap checker for each
+    // hashchecker method
+    //making it more optimized
+    //if value
     let hash = {};
-    let duplicates = [];
-    // while(nums.lengh > 0){
 
-      
-            for(let j = i; j<nums.length; j++){
-                if(nums[j] === nums[j+1]){
-
-                }
+    // if 
+    for (const [i, v] of nums.entries()) {
+        console.log('v', v)
+        if (i === 0) {
+            console.log('1111111')
+            hash[v] = [v];
+        }
+        //Use Map()
+        //
+        for (const [key, value] of Object.entries(hash)) {
+            console.log('value', key, value)
+            if ((hash[key][hash[key].length - 1]) === (v - 1)) {
+                hash[key].push(v)
+                console.log('hash[key', hash[key])
+            } else {
+                hash[v] = [v];
+                console.log('hash[key] 2', hash[key])
             }
-       
-    // }
- 
-    return true;
+        }
+    }
+    console.log('hash', hash)
+
 }
 
-const nums = [1,2,3,3,4,4,5,5];
+const nums = [1, 2, 3, 3, 4, 4, 5, 5];
 console.log(isPossible(nums))
+
+ // class subSequences {
+    //     constructor(nums){
+    //         this.nums = nums;
+    //     }
+
+    //     hashChecker(){
+    //        return this.nums;
+
+    //     }
+    // }
+    // // return true;
+    // let sub = new subSequences(nums);
+    // console.log(sub.hashChecker());
 
 // let forwardArr = [];
 // let backwardArr = [];
