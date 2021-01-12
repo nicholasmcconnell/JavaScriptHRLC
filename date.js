@@ -33,7 +33,6 @@ const weeksPrior = () => {
     let numOfWeeks = 3;
     let weekLength = 7;
     let d = new Date()
-    let currSun = formatDate()[0].split('-');
     let currSunMonth =  d.getMonth();
     let currSunDay = d.getDate();
     let currSunYear = d.getFullYear();
@@ -41,7 +40,6 @@ const weeksPrior = () => {
     console.log(currSunYear, currSunMonth, currSunDay)
     // let d = new Date(currSunYear, currSunMonth, currSunDay-28);
     let weekArr = formatDate(currSunYear, currSunMonth, currSunDay -21);
-    console.log(weekArr)
 }
 
 weeksPrior();
