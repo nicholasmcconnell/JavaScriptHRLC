@@ -1,0 +1,41 @@
+const s = "([]";
+
+const isValid = (s) => {
+    let checkArr = [];
+    let check = false;
+    console.log(s[s.length - 1])
+    if (s.length === 1 || s[s.length - 1].match(/[({[]/)) return false;
+
+    // fruit.match(/^(banana|lemon|mango|pineapple)$/
+    for (let i = 0; i < s.length; i++) {
+        if (s[i].includes('(') || s[i].includes('{') || s[i].includes('[')) {
+            switch (s[i]) {
+                case '(':
+                    checkArr.push(')')
+                    break;
+                case '{':
+                    checkArr.push('}')
+                    break;
+                case '[':
+                    checkArr.push(']')
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        if (s[i].includes(')') || s[i].includes('}') || s[i].includes(']')) {
+            check = true;
+
+            if (s[i] !== checkArr[checkArr.length - 1]) {
+                return false;
+            } else {
+                checkArr.pop()
+            }
+        }
+    }
+    if (!check || checkArr.length) return false;
+    return true;
+}
+
+console.log(isValid(s))
