@@ -9,6 +9,7 @@ const maxRepeatSubstring = (sequence, word) => {
 
     while (sequence.includes(word)) {
         word += addOn;
+        console.log(word)
         k++
     }
     return k;
