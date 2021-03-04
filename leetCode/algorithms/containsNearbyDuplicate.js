@@ -1,5 +1,4 @@
-const nums = [0, 4, 5, 0, 3, 6];
-const k = 2;
+
 
 
 
@@ -12,24 +11,24 @@ const k = 2;
 //     return false;
 // }
 
-const containsDuplicate = (nums) => {
-    let cache = {};
+// const containsDuplicate = (nums) => {
+//     let cache = {};
 
-    for (let i = 0; i < nums.length; i++) {
-        if (cache[nums[i]]) {
-            cache[nums[i]]++;
-            if (cache[nums[i]] > 1) return true;
-        } else {
-            cache[nums[i]] = 1;
-        }
-        console.log(cache)
-    }
-    return false;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (cache[nums[i]]) {
+//             cache[nums[i]]++;
+//             if (cache[nums[i]] > 1) return true;
+//         } else {
+//             cache[nums[i]] = 1;
+//         }
+//         console.log(cache)
+//     }
+//     return false;
+// 
+// }
 
-}
-
-console.log(containsDuplicate(nums))
-
+const nums = [0, 4, 5, 0, 3, 6];
+const k = 10;
 var containsNearbyDuplicate = function (nums, k) {
     let length = nums.length;
     let cache = {};
@@ -43,7 +42,10 @@ var containsNearbyDuplicate = function (nums, k) {
     return false;
 };
 
-// console.log(containsNearbyDuplicate(nums, k))
+
+
+
+console.log(containsNearbyDuplicate(nums, k))
 
 // var containsNearbyDuplicate = function (nums, k) {
 //     let ind = {}, n = nums.length;

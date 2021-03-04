@@ -3,9 +3,6 @@ const words = ["abc", "deq", "mee", "aqq", "dkd", "ccc"];
 const pattern = "abb";
 
 const findAndReplacePattern = (words, pattern) => {
-    let pObj = {};
-    let wObj = {};
-    let count = 0;
     let res = [];
     for (const [index, v] of words.entries()) {
         let pObj = {};

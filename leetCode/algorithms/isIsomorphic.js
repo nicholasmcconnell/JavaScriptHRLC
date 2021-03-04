@@ -11,7 +11,7 @@ var isIsomorphic = function (s, t) {
         if (!mapS[s[i]] && !mapT[t[i]]) {
             mapS[s[i]] = t[i];
             mapT[t[i]] = s[i];
-            // console.log(mapS, mapT)
+            console.log(mapS, mapT)
         } else if (mapS[s[i]] && mapT[t[i]]) {
             console.log('iin else if')
             if (mapS[s[i]] !== t[i] || s[i] !== mapT[t[i]]) return false;

@@ -1,5 +1,5 @@
-const name = "a";
-const typed = "aaaaaaaaaaa";
+const name = "aseead";
+const typed = "aaasiseead";
 
 
 var isLongPressedName = function (name, typed) {
@@ -18,11 +18,12 @@ var isLongPressedName = function (name, typed) {
         }
         console.log('22222', i, n[i], j, t[j])
         if (t[j] === t[j - 1]) {
-            t.splice(j - 1, 1)
+            console.log('splice', t.splice(j - 1, 1), t)
             continue;
         }
         i++;
     }
+    console.log(n, t)
     return n.join('') === t.join('') ? true : false;
 };
 

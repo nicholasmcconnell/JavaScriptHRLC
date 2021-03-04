@@ -1,6 +1,6 @@
-let arr = [1, 2, 4, 3, 4, 4];
-let m = 2;
-let k = 1;
+let arr = [1, 2, 1, 1, 2, 1, 1, 2, 1, 3];
+let m = 3;
+let k = 3;
 
 var containsPattern = function (arr, m, k) {
     let count = 0;
