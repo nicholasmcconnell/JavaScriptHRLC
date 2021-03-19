@@ -17,25 +17,18 @@ var countCharacters = function (words, chars) {
     for (let i = 0; i < words.length; i++) {
         let tempCharCache = { ...charsCache };
         let hasLetter = true;
-        // test = '';
+
         for (let j = 0; j < words[i].length; j++) {
 
             if (!tempCharCache[words[i][j]]) {
-                console.log('111111111')
-
                 hasLetter = false;
                 break;
             }
-            console.log('hi', tempCharCache)
             tempCharCache[words[i][j]] -= 1;
-            console.log(tempCharCache, words[i][j])
         }
         if (hasLetter) {
-            console.log(words[i])
-            console.log('in words if')
             str += words[i];
         }
-        console.log(str)
     };
     return (str.length)
 
