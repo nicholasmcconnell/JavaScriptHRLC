@@ -35,7 +35,7 @@ const checkForSpaces = (word: string): string => {
     }
 
     return word;
-}
+};
 
 const maxWordLength = (wordArr: Array<string>): Number => {
     let maxLength = 0;
@@ -45,8 +45,7 @@ const maxWordLength = (wordArr: Array<string>): Number => {
         maxLength = Math.max(maxLength, wordArr[i].length);
     }
 
-
     return maxLength;
-}
+};
 
 console.log(printVertically(s))
