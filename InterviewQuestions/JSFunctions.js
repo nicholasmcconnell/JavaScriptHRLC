@@ -25,7 +25,10 @@ const multiDimArray = [[1, 2], 3, [4, 5]];
 
 const flattenArray = (multiDimArray) => {
 
-    return [].concat(...multiDimArray);
+    // return [].concat(...multiDimArray);
+
+    let flatArr = multiDimArray.reduce((acc, cv) => acc.concat(cv), []);
+    return flatArr;
 }
 
 console.log(flattenArray(multiDimArray));
