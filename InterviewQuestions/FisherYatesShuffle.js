@@ -1,4 +1,4 @@
-const orderedArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const orderedArr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
 const fisherYatesShuffle = (orderedArr) => {
 
@@ -12,4 +12,7 @@ const fisherYatesShuffle = (orderedArr) => {
     return orderedArr;
 }
 
-console.log(fisherYatesShuffle(orderedArr));
+// console.log(fisherYatesShuffle(orderedArr));
+
+console.log(orderedArr.length / 2)
+
