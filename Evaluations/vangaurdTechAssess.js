@@ -5,30 +5,26 @@ function fizzBuzz(n) {
 const n = 15;
 
 function fizzBuzz(n) {
-    let arr = [];
-    for (let i = 0; i < n; i++) {
-        arr.push(i + 1)
-    }
-    for (const int of arr) {
-        if (Number.isInteger(int / 3) && Number.isInteger(int / 5)) {
-            console.log('FizzBuzz');
+    let arr = new Array(n);
+    console.log(typeof arr);
 
-        }
-        if (Number.isInteger(int / 3) && !Number.isInteger(int / 5)) {
+    for (let index = 1; index < n; index++) {
+        if (index % 3 === 0 && index % 5 === 0) {
+            console.log('FizzBuzz');
+        } else if (index % 3 === 0) {
             console.log('Fizz');
 
-        }
-        if (!Number.isInteger(int / 3) && Number.isInteger(int / 5)) {
+        } else if (index % 5 === 0) {
             console.log('Buzz');
-
         }
-        if (!Number.isInteger(int / 3) && !Number.isInteger(int / 5)) {
-            console.log(int);
+        else {
+            console.log(index);
         }
     }
 }
 
-console.log(fizzBuzz(n));
+
+fizzBuzz(n);
 
 //find min # of days for kelly to have solved more problems than sam kelly cannot surpass return -1;
 
@@ -59,13 +55,13 @@ function minNum(samDaily, kellyDaily, difference) {
 
 // console.log(minNum(samDaily, kellyDaily, difference));
 
-const devicenames = ["mixer","toaster","mixer","tv"] 
+const devicenames = ["mixer", "toaster", "mixer", "tv"]
 
 function deviceNamesSystem(devicenames) {
 
-    for(let i=0; i < devicenames.length; i++) {
+    for (let i = 0; i < devicenames.length; i++) {
 
-        if (devicenames.filter((item, index) => devicenames.indexOf(item) != index)){
+        if (devicenames.filter((item, index) => devicenames.indexOf(item) != index)) {
             devicenames[i] = devicenames[i] + 1;
         }
 
