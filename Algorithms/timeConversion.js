@@ -12,14 +12,10 @@ function timeConversion(s) {
             return hour + tail;
         }
         let pmHour = hour + 12;
-
-        // let newTime = pmHour.toString().concat(removePm);
         return pmHour + tail;
     } else if (amPm === 'AM' && hour === 12) {
-        let removeTwelve = s.substring(2, s.length - 2);
         return '00' + tail;
     } else {
-        ;
         return hour + tail;
     }
 }
