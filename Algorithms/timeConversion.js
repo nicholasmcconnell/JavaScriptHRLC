@@ -1,24 +1,26 @@
 
-const s = '02:05:45AM'
+const s = '10:05:45AM'
 
 function timeConversion(s) {
     // Write your code here
-    let amPm = s.charAt(s.length - 2);
-    if (amPm === 'P') {
-        if (s.slice(0, 2) === '12') {
-            return s.substring(0, s.length - 2);
+    let amPm = s.slice(-2);
+    let hour = parseInt(s.slice(0, 2));
+    let tail = s.slice(2, s.length - 2);
+    console.log(hour)
+    if (amPm === 'PM') {
+        if (hour === '12') {
+            return hour + tail;
         }
-        let pmHour = parseInt(s.slice(0, 2)) + 12;
-        let removePm = s.substring(2, s.length - 2);
-        let newTime = pmHour.toString().concat(removePm);
-        return newTime;
-    } else if (amPm === 'A' && s.slice(0, 2) === '12') {
-        let removeTwelve = s.substring(2, s.length - 2);
-        return '00'.concat(removeTwelve);
+        let pmHour = hour + 12;
 
+        // let newTime = pmHour.toString().concat(removePm);
+        return pmHour + tail;
+    } else if (amPm === 'AM' && hour === 12) {
+        let removeTwelve = s.substring(2, s.length - 2);
+        return '00' + tail;
     } else {
-        let removeAm = s.substring(0, s.length - 2);
-        return removeAm;
+        ;
+        return hour + tail;
     }
 }
 
