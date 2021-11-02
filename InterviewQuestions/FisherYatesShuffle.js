@@ -12,7 +12,10 @@ const fisherYatesShuffle = (orderedArr) => {
     return orderedArr;
 }
 
-// console.log(fisherYatesShuffle(orderedArr));
+console.log(fisherYatesShuffle(orderedArr));
 
-console.log(orderedArr.length / 2)
+
+let x = Math.random();
+console.log(x * 8)
+console.log(Math.floor(x * 8))
 

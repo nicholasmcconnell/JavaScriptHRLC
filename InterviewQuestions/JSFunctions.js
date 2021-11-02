@@ -31,4 +31,27 @@ const flattenArray = (multiDimArray) => {
     return flatArr;
 }
 
-console.log(flattenArray(multiDimArray));
+// console.log(flattenArray(multiDimArray));
+
+class a {
+    constructor() {
+        this.value = 1;
+    }
+
+    addOne() {
+        // setTimeout(() => {
+        this.value++;
+        return (this.value);
+        // }, 500);
+    }
+}
+
+let aa = new a();
+let value = aa.addOne()
+// console.log(value);
+
+let argsSpread = (...args) => {
+    console.log(args[0])
+}
+
+argsSpread(1, 2, 3)

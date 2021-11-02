@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+
+  <body onLoad="hi()" onUnload="bye()">
+    <script>
+      var nm = "";
+      function hi() {
+        nm = prompt("Hello! Your name?", "");
+      }
+      function bye() {
+        alert("Goodbye " + nm);
+      }
+    </script>
+    <script type="module" src="./sum.js"></script>
+  </body>
+  <!-- <script>
+      let x = 20;
+      var y = 20;
+      {
+        let x = 50;
+        var y = 50;
+        {
+          let x = 22;
+          var y = 22;
+          document.write("1x: " + x + "<br/>");
+          document.write("1y: " + y + "<br/>");
+          //   Output 1:
+        }
+        document.write("2x: " + x + "<br/>");
+        document.write("2y: " + y + "<br/>");
+        //   Output 2:
+      }
+      document.write("3x: " + x + "<br/>");
+      document.write("y3: " + y + "<br/>");
+      //    Output 3:
+    </script> -->
+</body>
+
+</html>
