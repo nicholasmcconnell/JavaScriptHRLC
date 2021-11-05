@@ -6,4 +6,6 @@ function sum(a, b) {
 function helper() {
     console.log('helper');
 }
-module.exports = sum;
+// module.exports = sum;
+
+console.log(typeof 0.12);
