@@ -1,0 +1,21 @@
+.form-results {
+  border: 5px green dotted;
+  font-size: 30px;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+  background-color: bisque;
+  /* width: max-content; */
+}
+
+.formValuesDiv {
+  /* background-color: aqua; */
+  /* width: 100%; */
+  width: max-content;
+}
+
+.container {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+}
